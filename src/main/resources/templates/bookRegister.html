@@ -37,6 +37,7 @@
       <div class="container my-5 p-5" style="border: 1px solid black;">
         <h4 class="text-center">Nouveau registre de livres</h4>
         <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+            <!-- save c'est la route qui va traiter les données -->
             <div class="mb-3">
               <label for="name" class="form-label">Nom</label>
               <input type="text" class="form-control" name="name">

@@ -43,11 +43,16 @@ public class BookController {
         //m.setViewName("bookList");
         //m.addObject("book", list)
         return new ModelAndView("bookList", "book", list);
+        //bookList est le fichier html qui va afficher nos données
+        //book est le nom qui va permet de pouvoir afficher nos données
     }
 
+    //Comme le formulaire est en post
     @PostMapping("/save")
     public String addBook(@ModelAttribute Book b) {
+        //la methode save provient de BookService
         service.save(b);
+        //Après le traitement des données nous redirigeons cette fonction  vers une url
         return "redirect:/available_books";
     }
     @GetMapping("/my_books")
@@ -68,11 +73,14 @@ public class BookController {
     public String editBook(@PathVariable("id") int id, Model model) {
         Book b=service.getBookById(id);
         model.addAttribute("book", b);
+        //book c'est pour pouvoir modifier nos données dans le fichier html
+        //bookEdit est le fichier html qui va permet de modifier nos données
         return "bookEdit";
     }
     @RequestMapping("/deleteBook/{id}")
     public String deleteBook(@PathVariable("id") int id) {
         service.deleteById(id);
+        //redirige vers la page available_books
         return "redirect:/available_books";
     }
     

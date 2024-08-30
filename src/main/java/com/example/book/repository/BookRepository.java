@@ -7,5 +7,6 @@ import com.example.book.entity.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book,Integer> {
-
+    //Book c'est pour la classe de notre table
+    //Integer est le type de données de notre id
 }

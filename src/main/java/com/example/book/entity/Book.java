@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Book {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id //Pour dire que c'est un id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //Pour l'incrémentation automatique
     private int id;
     private String name;
     private String author;

@@ -47,12 +47,15 @@
               </tr>
             </thead>
             <tbody>
+              <!-- book vient de notre controller -->
+               <!-- id,name,author et price ce sont nos attributs -->
               <tr th:each="b :${book}">
                 <td th:text="${b.id}"></td>
                 <td th:text="${b.name}"></td>
                 <td th:text="${b.author}"></td>
                 <td th:text="${b.price}"></td>
                 <td>
+                  
                     <a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${b.id})}">Ajouter à mon livre</a>
                     <a style="color: blue;" th:href="@{/editBook/{id}(id=${b.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
                     <a style="color: red;" th:href="@{/deleteBook/{id}(id=${b.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
